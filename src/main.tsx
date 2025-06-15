@@ -1,6 +1,6 @@
 import { render } from "preact";
 import { Router } from "wouter";
-import "./styles.css";
+import "./index.css";
 import { App } from "./app.tsx";
 
 render(
