@@ -8,6 +8,7 @@ Este é um template simples usando **Vite**, **Preact**, **TypeScript** e **Wout
 - [Preact](https://preactjs.com/)
 - [TypeScript](https://www.typescriptlang.org/)
 - [Wouter](https://github.com/molefrog/wouter)
+- [Tailwind CSS](https://tailwindcss.com/docs/installation/using-vite)
 - [Bun](https://bun.sh/)
 
 ## Como usar
@@ -29,6 +30,20 @@ Este é um template simples usando **Vite**, **Preact**, **TypeScript** e **Wout
 ```bash
 bun create vite meu-projeto --template preact-ts
 bun add wouter
+bun add tailwindcss @tailwindcss/vite
+```
+
+Em vite.config.ts colocar
+
+```tsx
+import { defineConfig } from "vite";
+import preact from "@preact/preset-vite";
+import tailwindcss from "@tailwindcss/vite";
+
+// https://vite.dev/config/
+export default defineConfig({
+  plugins: [preact(), tailwindcss()],
+});
 ```
 
 ## Observação
