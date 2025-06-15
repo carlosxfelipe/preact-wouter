@@ -3,7 +3,7 @@ import Home from "./pages/Home";
 import About from "./pages/About";
 import { Navbar } from "./components/Navbar";
 
-export default function NotFound() {
+function NotFound() {
   return (
     <div>
       <h1>Página não encontrada</h1>
