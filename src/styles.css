@@ -18,8 +18,14 @@
   p {
     font-family: "Roboto", sans-serif;
   }
+
+  a {
+    @apply text-blue-600 dark:text-blue-400 hover:underline;
+  }
 }
 
 @theme {
   --font-roboto: "Roboto", sans-serif;
+
+  --color-mint-500: oklch(0.72 0.11 178);
 }

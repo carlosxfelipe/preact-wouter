@@ -11,18 +11,8 @@ export function Navbar() {
           Meu Site
         </Link>
         <div className="space-x-6">
-          <Link
-            href="/"
-            className="text-blue-600 dark:text-blue-400 hover:underline"
-          >
-            Início
-          </Link>
-          <Link
-            href="/about"
-            className="text-blue-600 dark:text-blue-400 hover:underline"
-          >
-            Sobre
-          </Link>
+          <Link href="/">Início</Link>
+          <Link href="/about">Sobre</Link>
         </div>
       </div>
     </nav>
