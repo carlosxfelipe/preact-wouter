@@ -1,7 +1,9 @@
 import { useState } from "react";
 import { useLocation } from "wouter";
+import { useAuth } from "../contexts/AuthContext";
 
 const Login = () => {
+  const { login } = useAuth();
   const [, setLocation] = useLocation();
   const [username, setUsername] = useState<string>("");
   const [password, setPassword] = useState<string>("");
@@ -11,6 +13,7 @@ const Login = () => {
 
     // Validação temporária
     if (username === "user" && password === "123") {
+      login();
       setLocation("/");
     } else {
       alert("Usuário ou senha inválidos");

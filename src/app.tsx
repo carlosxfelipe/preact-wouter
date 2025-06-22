@@ -5,6 +5,7 @@ import About from "./pages/About";
 import { Navbar } from "./components/Navbar";
 import { Layout } from "./components/Layout";
 import { AuthLayout } from "./components/AuthLayout";
+import { useAuth } from "./contexts/AuthContext";
 
 function NotFound() {
   return (
@@ -16,7 +17,7 @@ function NotFound() {
 }
 
 function PrivateRoute({ component: Component }: { component: any }) {
-  const isAuthenticated = false;
+  const { isAuthenticated } = useAuth();
 
   return isAuthenticated ? <Component /> : <Redirect to="/login" />;
 }
