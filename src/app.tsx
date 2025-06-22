@@ -4,6 +4,7 @@ import Home from "./pages/Home";
 import About from "./pages/About";
 import { Navbar } from "./components/Navbar";
 import { Layout } from "./components/Layout";
+import { AuthLayout } from "./components/AuthLayout";
 
 function NotFound() {
   return (
@@ -15,7 +16,7 @@ function NotFound() {
 }
 
 function PrivateRoute({ component: Component }: { component: any }) {
-  const isAuthenticated = true;
+  const isAuthenticated = false;
 
   return isAuthenticated ? <Component /> : <Redirect to="/login" />;
 }
@@ -47,6 +48,6 @@ export function App() {
       {content}
     </Layout>
   ) : (
-    content
+    <AuthLayout>{content}</AuthLayout>
   );
 }
