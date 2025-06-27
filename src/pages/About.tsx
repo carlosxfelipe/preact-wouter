@@ -1,2 +1,1 @@
-const About = () => <h2>Sobre o Projeto</h2>;
-export default About;
+export const About = () => <h2>Sobre o Projeto</h2>;

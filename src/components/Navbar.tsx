@@ -13,6 +13,7 @@ export function Navbar() {
         <div className="space-x-6">
           <Link href="/">Início</Link>
           <Link href="/about">Sobre</Link>
+          <Link href="/">Sair</Link>
         </div>
       </div>
     </nav>

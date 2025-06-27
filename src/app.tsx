@@ -1,20 +1,9 @@
 import { Redirect, Route, Switch, useLocation } from "wouter";
-import Login from "./pages/Login";
-import Home from "./pages/Home";
-import About from "./pages/About";
+import { Login, Register, Home, About, NotFound } from "./pages";
 import { Navbar } from "./components/Navbar";
-import { Layout } from "./components/Layout";
-import { AuthLayout } from "./components/AuthLayout";
+import { Layout } from "./layouts/Layout";
+import { AuthLayout } from "./layouts/AuthLayout";
 import { useAuth } from "./contexts/AuthContext";
-
-function NotFound() {
-  return (
-    <div>
-      <h1 className="text-xl font-bold">Página não encontrada</h1>
-      <p>Desculpe, a página que você tentou acessar não existe.</p>
-    </div>
-  );
-}
 
 function PrivateRoute({ component: Component }: { component: any }) {
   const { isAuthenticated } = useAuth();
@@ -33,6 +22,7 @@ export function App() {
     <main className="p-4 max-w-5xl mx-auto">
       <Switch>
         <Route path="/login" component={Login} />
+        <Route path="/register" component={Register} />
         <Route path="/" component={() => <PrivateRoute component={Home} />} />
         <Route
           path="/about"
